@@ -14,4 +14,6 @@ Starring thoughts of flutter and AI together
 - [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
 - [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
 
+>I am a flutter and laravel full stack developer, you can check upon [my instagram profile](https://www.instagram.com/samyush/)
+
 ![End Banner](https://github.com/londonappbrewery/Images/blob/master/readme-end-banner.png)
