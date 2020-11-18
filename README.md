@@ -5,8 +5,8 @@
 
 A new Flutter project initially developed for learning basics of AI using flutter.
 
-## Getting Started
-conceptualizing thoughts of flutter and AI together
+## For Getting Started
+Starring thoughts of flutter and AI together
 
 ## @author samyush(https://github.com/Samyush)
 
