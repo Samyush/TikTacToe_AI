@@ -8,7 +8,7 @@ A new Flutter project initially developed for learning basics of AI using flutte
 ## Getting Started
 conceptualizing thoughts of flutter and AI together
 
-@author samyush(https://github.com/Samyush)
+## @author samyush(https://github.com/Samyush)
 
 
 - [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
