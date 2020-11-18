@@ -1,4 +1,4 @@
-![samyush Banner](https://github.com/londonappbrewery/Images/blob/master/AppBreweryBanner.png)
+![samyush Banner](https://github.com/Samyush/TikTacToe_AI/blob/master/images/aluCross.png)
 
 
 # TikTacToe_AI
