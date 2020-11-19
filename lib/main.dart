@@ -1,4 +1,4 @@
-import 'package:TikTacToe_AI/Screen/gameScreen.dart';
+import 'package:TikTacToe_AI/Screen/splashScreen.dart';
 import 'package:flutter/material.dart';
 
 void main() => runApp(MyApp());
@@ -13,7 +13,7 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
-      home: GameScreen(title: 'AI ko ALU CROSS'),
+      home: SplashScreen(),
     );
   }
 }
