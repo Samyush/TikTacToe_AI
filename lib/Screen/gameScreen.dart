@@ -1,7 +1,7 @@
-import 'package:TikTacToe_AI/GameUI/victoryLine.dart';
+import 'package:TikTacToe_AI/GameUI/Victory/victory.dart';
+import 'package:TikTacToe_AI/GameUI/Victory/victoryLine.dart';
 import 'package:TikTacToe_AI/ReuseCodes/Shapes/circle.dart';
 import 'package:TikTacToe_AI/ReuseCodes/Shapes/cross.dart';
-import 'package:TikTacToe_AI/Victory/victory.dart';
 import 'package:flutter/material.dart';
 
 class GameScreen extends StatefulWidget {

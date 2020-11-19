@@ -1,5 +1,5 @@
+import 'package:TikTacToe_AI/GameUI/Victory/victory.dart';
 import 'package:TikTacToe_AI/ReuseCodes/constants.dart';
-import 'package:TikTacToe_AI/Victory/victory.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 
