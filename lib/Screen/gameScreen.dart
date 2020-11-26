@@ -163,66 +163,67 @@ class _GameScreen extends State<Game> {
   Widget buildVictoryLine() => AspectRatio(
       aspectRatio: 1.0, child: CustomPaint(painter: VictoryLine(victory)));
 //
+
+  void cleanUp() {
+    victory = null;
+    field = [
+      ['', '', ''],
+      ['', '', ''],
+      ['', '', '']
+    ];
+    playersTurn = me == 'X';
+    String text = playersTurn ? 'Your turn' : 'Opponent\'s turn';
+    print(text);
+    Scaffold.of(_context).showSnackBar(SnackBar(content: Text(text)));
+  }
+
+  void restart() async {
+    setState(() {
+      cleanUp();
+    });
+  }
+
+  void checkForVictory() {
+    victory = VictoryChecker.checkForVictory(field, playerChar);
+    if (victory != null) {
+      String message;
+
+      if (victory.winner == PLAYER_WINNER) {
+        message = 'You Win!';
+      } else if (victory.winner == AI_WINNER) {
+        message = type == null ? 'AI Win!' : 'You loose!';
+      } else if (victory.winner == DRAFT) {
+        message = 'Draft';
+      }
+      print(message);
+      Scaffold.of(_context).showSnackBar(SnackBar(
+        content: Text(message),
+        duration: Duration(minutes: 1),
+        action: SnackBarAction(
+            label: 'Retry',
+            onPressed: () {
+              if (type == null) {
+                setState(() {
+                  victory = null;
+                  field = [
+                    ['', '', ''],
+                    ['', '', ''],
+                    ['', '', '']
+                  ];
+                  playersTurn = true;
+                });
+              } else {
+                restart();
+              }
+            }),
+      ));
+    }
+  }
+
   void displayPlayersTurn(int row, int column) {
     print('clicked on row $row column $column');
     playersTurn = false;
     field[row][column] = playerChar;
-
-    void cleanUp() {
-      victory = null;
-      field = [
-        ['', '', ''],
-        ['', '', ''],
-        ['', '', '']
-      ];
-      playersTurn = me == 'X';
-      String text = playersTurn ? 'Your turn' : 'Opponent\'s turn';
-      print(text);
-      Scaffold.of(_context).showSnackBar(SnackBar(content: Text(text)));
-    }
-
-    void restart() async {
-      setState(() {
-        cleanUp();
-      });
-    }
-
-    void checkForVictory() {
-      victory = VictoryChecker.checkForVictory(field, playerChar);
-      if (victory != null) {
-        String message;
-
-        if (victory.winner == PLAYER_WINNER) {
-          message = 'You Win!';
-        } else if (victory.winner == AI_WINNER) {
-          message = type == null ? 'AI Win!' : 'You loose!';
-        } else if (victory.winner == DRAFT) {
-          message = 'Draft';
-        }
-        print(message);
-        Scaffold.of(_context).showSnackBar(SnackBar(
-          content: Text(message),
-          duration: Duration(minutes: 1),
-          action: SnackBarAction(
-              label: 'Retry',
-              onPressed: () {
-                if (type == null) {
-                  setState(() {
-                    victory = null;
-                    field = [
-                      ['', '', ''],
-                      ['', '', ''],
-                      ['', '', '']
-                    ];
-                    playersTurn = true;
-                  });
-                } else {
-                  restart();
-                }
-              }),
-        ));
-      }
-    }
 
     Timer(Duration(milliseconds: 600), () {
       setState(() {
@@ -240,7 +241,7 @@ class _GameScreen extends State<Game> {
         playersTurn = true;
         Timer(Duration(milliseconds: 600), () {
           setState(() {
-            // checkForVictory();
+            checkForVictory();
           });
         });
       });
