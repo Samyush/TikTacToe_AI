@@ -20,7 +20,7 @@ class _SplashScreenState extends State<SplashScreen> {
         Duration(seconds: 5),
         () => Navigator.of(context).pushReplacement(MaterialPageRoute(
             builder: (BuildContext context) =>
-                GameScreen(title: 'AI ko ALU CROSS'))));
+                Game(title: 'AI ko ALU CROSS'))));
   }
 
   @override
