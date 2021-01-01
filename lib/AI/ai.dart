@@ -2,6 +2,8 @@ import 'dart:math';
 
 import 'decision.dart';
 
+//minimax algorithm integrated with find best move algorithm
+
 class AI {
   List<List<String>> _field;
   String _playerChar;
